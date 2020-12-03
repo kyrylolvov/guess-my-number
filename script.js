@@ -13,6 +13,7 @@ let highscore = 0;
 
 document.querySelector(`.check`).addEventListener(`click`, function () {
   const guess = Number(document.querySelector(`.guess`).value);
+  console.log(guess, typeof guess, secretNumber);
 
   // When user enters incorrect number
 
@@ -38,23 +39,10 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
       highscore = score;
       document.querySelector(`.highscore`).textContent = highscore;
     }
-  }
-
-  // When number is higher
-  else if (guess > secretNumber) {
+  } else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector(`.message`).textContent = `Too high! 📈`;
-      score--;
-      document.querySelector(`.score`).textContent = score;
-    } else {
-      document.querySelector(`.message`).textContent = `You lost! 😣`;
-      document.querySelector(`.score`).textContent = 0;
-    }
-
-    // When number is lower
-  } else if (guess < secretNumber) {
-    if (score > 1) {
-      document.querySelector(`.message`).textContent = `Too low! 📉`;
+      document.querySelector(`.message`).textContent =
+        guess > secretNumber ? `Too high! 📈` : `Too low! 📉`;
       score--;
       document.querySelector(`.score`).textContent = score;
     } else {
