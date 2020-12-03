@@ -20,11 +20,6 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
   if (!guess) {
     if (score > 1) {
       document.querySelector(`.message`).textContent = `Invalid Number! ⛔`;
-      score--;
-      document.querySelector(`.score`).textContent = score;
-    } else {
-      document.querySelector(`.message`).textContent = `You lost! 😣`;
-      document.querySelector(`.score`).textContent = 0;
     }
   }
 
