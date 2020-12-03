@@ -13,7 +13,6 @@ let highscore = 0;
 
 document.querySelector(`.check`).addEventListener(`click`, function () {
   const guess = Number(document.querySelector(`.guess`).value);
-  console.log(guess, typeof guess, secretNumber);
 
   // When user enters incorrect number
 
