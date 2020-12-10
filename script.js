@@ -30,6 +30,7 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
     document.querySelector(`.number`).style.width = `30rem`;
     document.querySelector(`.number`).textContent = secretNumber;
 
+    // When user enters a number that is higher or lower
     if (score > highscore) {
       highscore = score;
       document.querySelector(`.highscore`).textContent = highscore;
